@@ -1,0 +1,62 @@
+# Known object detection (this needs: Object Detection)
+1_kids_muffins.jpg|How many muffins can each kid have for it to be fair?
+drinks.jpg|Return the image patches and names of drinks without alcohol.
+field_trip2.jpg|How many children are in the picture?
+field_trip2.jpg|What color is the shirt of the last child?
+field_trip2.jpg|What color is the shirt of the last child from the left of the picture?
+field_trip2.jpg|What color is the shirt of the last child from the right of the picture?
+field_trip2.jpg|What color is the shirt of the first child from the left of the picture?
+field_trip2.jpg|What color is the shirt of the first child from the right of the picture?
+multiple_cats.jpg|How many cats are in the image?
+multiple_cats.jpg|How many cats are sitting or lying on the ground?
+schnitzel.jpg|What type of cutlery is used in the image?
+blue_and_red.jpg|What color do you get if you combine the colors of the flowers?
+blue_and_red.jpg|What color do you get if you mix the colors of the flowers?
+blue_and_red2.jpg|What color do you get if you combine the colors of the two flowers?
+blue_and_red2.jpg|What color do you get if you mix the colors of the two flowers?
+field_trip.jpg|What is the ratio of teachers to children in the image?
+
+# Unknown object detection (this needs: Object Detection and Object Interpretation)
+cat_computer.jpg|What sticker is in the bottom-right corner of the laptop?
+pizza.jpg|What are the toppings of the top-right pizza?
+different_animals.jpg|How many animals are in the image?
+different_animals.jpg|How many different animals are in the image?
+
+# Knowledge acquisition (this needs: Object Detection, Object Interpretation, Query to Ais and Knowledge Acquisition)
+competition_building.jpg|Tell me about the competition between the two skyscrapers in the image.
+multiple_cars.jpg|What would the founder of the brand of the car on the left say to the founders of the brand of the other cars?
+lion_cheetah_tiger.jpg|Which animal, from the picture, is the fastest?
+lion_cheetah_tiger.jpg|Which Feline animal, from the picture, is the fastest?
+lion_cheetah_tiger.jpg|Which of the three Feline animals from the picture, is the fastest?
+teddy.jpg|The real live version of this toy does what in the winter?
+teddy.jpg|The real live version of this toy animal does what in the winter?
+what_sport.jpg|What sports are typically played in the arena in the picture?
+
+# Everything after here is unlikely to be successful
+
+# Text/Character Recognition (this needs: Text Recognition, Object Detection and Query to Ais)
+word_text.png|What is the word in the image?
+ad.jpg|What company is displayed on the advertisement banner?
+ad.jpg|What airline company is displayed on the advertisement banner?
+ad.jpg|What airline company is displayed on the football advertisement banner?
+ad.jpg|What global airline company is displayed on the advertisement banner?
+mistake.jpg|What is the mistake in the image?
+mistake.jpg|What is the spelling mistake in the image?
+what_book_series.jpg|What is the name of the longest book series on the shelf?
+what_book_series.jpg|What are the names of the books on the shelf, which has the longest series?
+
+# Extreme ambiguity (this needs: Object Detection, Object Interpretation, Query to Ais, Knowledge Acquisition and possible Text Recognition)
+math_class.jpg|What are the students learning in the picture?
+math_class2.jpg|What are the students learning in the picture?
+math_class2.jpg|What common school subject is the student learning in the picture?
+math_class2.jpg|What subject is the student writing on the board in the picture?
+math_class2.jpg|What school subject is the student writing on the board in the picture?
+champion.jpg|Decribe what is on the image.
+champion.jpg|How many virtual characters can be seen in the image?
+champion.jpg|What is the name of the oldest champion in the picture?
+champion.jpg|What is the name of the oldest League of Legends champion in the picture?
+champion.jpg|In the picture are the League of Legends champions Lux, Jinx, Yasuo and Blitzcrank. Return the ImagePatch and the name of the oldest of these four champions.
+jesus.jpg|What is the name of the holiday depicted in the image?
+jesus.jpg|What is the name of the Christian holiday depicted in the image?
+jesus.jpg|What is the name of the Christian holiday associated with the image?
+jesus.jpg|What is the name of the Christian holiday associated with this image of Jesus?

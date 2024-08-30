@@ -1,0 +1,102 @@
+# 1_kids_muffins.jpg|How many muffins can each kid have for it to be fair?
+4, four
+# drinks.jpg|Return the image patches and names of drinks without alcohol.
+cola, red bull
+# field_trip2.jpg|How many children are in the picture?
+5, five
+# field_trip2.jpg|What color is the shirt of the last child?
+yellow, beige
+# field_trip2.jpg|What color is the shirt of the last child from the left of the picture?
+red, magenta, pink
+# field_trip2.jpg|What color is the shirt of the last child from the right of the picture?
+yellow, beige
+# field_trip2.jpg|What color is the shirt of the first child from the left of the picture?
+yellow, beige
+# field_trip2.jpg|What color is the shirt of the first child from the right of the picture?
+red, magenta, pink
+# multiple_cats.jpg|How many cats are in the image?
+20, twenty
+# multiple_cats.jpg|How many cats are sitting or lying on the ground?
+13, thirteen
+# schnitzel.jpg|What type of cutlery is used in the image?
+knife, fork
+# blue_and_red.jpg|What color do you get if you combine the colors of the flowers?
+purple, violet, magenta
+# blue_and_red.jpg|What color do you get if you mix the colors of the flowers?
+purple, violet, magenta
+# blue_and_red2.jpg|What color do you get if you combine the colors of the two flowers?
+purple, violet, magenta
+# blue_and_red2.jpg|What color do you get if you mix the colors of the two flowers?
+purple, violet, magenta
+# field_trip.jpg|What is the ratio of teachers to children in the image?
+1/7, 1 to 7, one to seven, one/seven
+# cat_computer.jpg|What sticker is in the bottom-right corner of the laptop?
+bomb, bomb sticker
+# pizza.jpg|What are the toppings of the top-right pizza?
+salami, cheese, pepperoni, cucumber, onions
+# different_animals.jpg|How many animals are in the image?
+13, thirteen
+# different_animals.jpg|How many different animals are in the image?
+7, seven, 8, eight
+# competition_building.jpg|Tell me about the competition between the two skyscrapers in the image.
+Empire State Building and Chrysler Building, Chrysler, [OpenEndedQuestion]
+# multiple_cars.jpg|What would the founder of the brand of the car on the left say to the founders of the brand of the other cars?
+Benz, Bentley, Ferrari,[OpenEndedQuestion]
+# lion_cheetah_tiger.jpg|Which animal, from the picture, is the fastest?
+cheetah, lion, jaguar
+# lion_cheetah_tiger.jpg|Which Feline animal, from the picture, is the fastest?
+cheetah, lion, jaguar
+# lion_cheetah_tiger.jpg|Which of the three Feline animals from the picture, is the fastest?
+cheetah, lion, jaguar
+# teddy.jpg|The real live version of this toy does what in the winter?
+hibernation, hibernate, hunt, sleep
+# teddy.jpg|The real live version of this toy animal does what in the winter?
+hibernation, hibernate, hunt, sleep
+# what_sport.jpg|What sports are typically played in the arena in the picture?
+wrestling, boxing, MMA
+# word_text.png|What is the word in the image?
+apple
+# ad.jpg|What company is displayed on the advertisement banner?
+turkish airlines, turkish
+# ad.jpg|What airline company is displayed on the advertisement banner?
+turkish airlines, turkish
+# ad.jpg|What airline company is displayed on the football advertisement banner?
+turkish airlines, turkish
+# ad.jpg|What global airline company is displayed on the advertisement banner?
+turkish airlines, turkish
+# mistake.jpg|What is the mistake in the image?
+hoppy, happy, easter, spelling
+# mistake.jpg|What is the spelling mistake in the image?
+hoppy, happy, easter
+# what_book_series.jpg|What is the name of the longest book series on the shelf?
+top secret, eragon, gregor
+# what_book_series.jpg|What are the names of the books on the shelf, which has the longest series?
+top secret, eragon, gregor
+# math_class.jpg|What are the students learning in the picture?
+math, geometry
+# math_class2.jpg|What are the students learning in the picture?
+math, algebra
+# math_class2.jpg|What common school subject is the student learning in the picture?
+math, algebra
+# math_class2.jpg|What subject is the student writing on the board in the picture?
+math, algebra
+# math_class2.jpg|What school subject is the student writing on the board in the picture?
+math, algebra
+# champion.jpg|Decribe what is on the image.
+league of legends, champions, heroes, characters, lux, jinx, yasuo, blitzcrank, [OpenEndedQuestion]
+# champion.jpg|How many virtual characters can be seen in the image?
+4, four
+# champion.jpg|What is the name of the oldest champion in the picture?
+blitzcrank
+# champion.jpg|What is the name of the oldest League of Legends champion in the picture?
+blitzcrank
+# champion.jpg|In the picture are the League of Legends champions Lux, Jinx, Yasuo and Blitzcrank. Return the ImagePatch and the name of the oldest of these four champions.
+blitzcrank
+# jesus.jpg|What is the name of the holiday depicted in the image?
+good friday, friday, goodfriday, karfreitag, crucifixion, easter
+# jesus.jpg|What is the name of the Christian holiday depicted in the image?
+good friday, friday, goodfriday, karfreitag, crucifixion, easter
+# jesus.jpg|What is the name of the Christian holiday associated with the image?
+good friday, friday, goodfriday, karfreitag, crucifixion, easter
+# jesus.jpg|What is the name of the Christian holiday associated with this image of Jesus?
+good friday, friday, goodfriday, karfreitag, crucifixion, easter

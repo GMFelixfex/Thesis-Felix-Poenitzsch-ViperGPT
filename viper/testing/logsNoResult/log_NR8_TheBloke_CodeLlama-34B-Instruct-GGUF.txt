@@ -1,0 +1,1947 @@
+Config Variables:
+{'multiprocessing': False, 'path_pretrained_models': './pretrained_models', 'execute_code': False, 'dataset': {'dataset_name': 'MyDataset', 'data_path': 'data', 'split': '', 'max_samples': None, 'batch_size': 20, 'start_sample': 0}, 'load_models': {'maskrcnn': False, 'clip': False, 'glip': True, 'owlvit': False, 'tcl': False, 'gpt3_qa': True, 'gpt3_general': True, 'depth': True, 'blip': True, 'saliency': False, 'xvlm': True, 'codex': False, 'codellama': False, 'lm_studio': True}, 'detect_thresholds': {'glip': 0.5, 'maskrcnn': 0.8, 'owlvit': 0.1}, 'ratio_box_area_to_image_area': 0.0, 'crop_larger_margin': True, 'verify_property': {'model': 'xvlm', 'thresh_clip': 0.6, 'thresh_tcl': 0.25, 'thresh_xvlm': 0.6}, 'best_match_model': 'xvlm', 'gpt3': {'n_votes': 1, 'qa_prompt': './prompts/gpt3/gpt3_qa.txt', 'guess_prompt': './prompts/gpt3/gpt3_process_guess.txt', 'temperature': 0.0, 'model': 'gpt-3.5-turbo'}, 'codex': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'gpt-3.5-turbo'}, 'save': True, 'save_new_results': True, 'results_dir': './results/', 'use_cache': True, 'clear_cache': False, 'use_cached_codex': False, 'cached_codex_path': '', 'log_every': 20, 'wandb': False, 'blip_half_precision': True, 'blip_v2_model_type': 'blip2-flan-t5-xl', 'use_fixed_code': False, 'fixed_code_file': './prompts/fixed_code/blip2.prompt', 'qa_model': 'TheBloke/WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF', 'lm_studio': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'TheBloke/CodeLlama-34B-Instruct-GGUF'}}
+Code Generator AI:
+lm_studio TheBloke_CodeLlama-34B-Instruct-GGUF
+Time:
+2024-07-04 18:30:01.679356
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/1_kids_muffins.jpg
+Query: How many muffins can each kid have for it to be fair?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Find all kids in the image
+    image_patch = ImagePatch(image)
+    kid_patches = image_patch.find("kid")
+
+    # Find all muffins in the image
+    muffin_patches = image_patch.find("muffin")
+
+    # Determine how many muffins each kid can have for it to be fair
+    num_kids = len(kid_patches)
+    num_muffins = len(muffin_patches)
+    if num_kids == 0 or num_muffins == 0:
+        return "I cannot determine how many muffins each kid can have for it to be fair because there are no kids or muffins in the image."
+    else:
+        return f"Each kid can have {num_muffins // num_kids} muffins for it to be fair."
+
+---------------1---------------
+
+---------------2---------------
+
+Image: C:/Users/Felix/viper/testing/images/drinks.jpg
+Query: Return the image patches and names of drinks without alcohol.
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    drinks = image_patch.find("drinks")
+    non_alcoholic_drinks = []
+    for drink in drinks:
+        if "alcohol" not in drink.llm_query("What is the alcohol content of this drink?"):
+            non_alcoholic_drinks.append(drink)
+    return non_alcoholic_drinks
+
+---------------2---------------
+
+---------------3---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: How many children are in the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize an ImagePatch object with the given image.
+    image_patch = ImagePatch(image)
+
+    # Find all patches containing a child in the image.
+    children_patches = image_patch.find("child")
+
+    # Return the number of children found.
+    return len(children_patches)
+# Test case 1:
+assert execute_command(ImagePatch([[['child', 'child'], ['child', 'child']]], 0, 0, 2, 2)) == 4
+# Test case 2:
+assert execute_command(ImagePatch([[['child', 'child'], ['adult', 'adult']]], 0, 0, 2, 2)) == 2
+# Test case 3:
+assert execute_command(ImagePatch([[['child', 'child'], ['adult', 'adult']], [['child', 'child'], ['adult', 'adult']]], 0, 0, 4, 4)) == 4
+
+
+---------------3---------------
+
+---------------4---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the last child?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize an ImagePatch object with the given image.
+    image_patch = ImagePatch(image)
+
+    # Find all patches containing a child in the image.
+    children_patches = image_patch.find("child")
+
+    # Sort the list of children patches by their vertical center coordinates.
+    children_patches.sort(key=lambda x: x.vertical_center)
+
+    # Find all patches containing a shirt in the last child patch.
+    last_child_patch = children_patches[-1]
+    shirts_patches = last_child_patch.find("shirt")
+
+    # Sort the list of shirts patches by their horizontal center coordinates.
+    shirts_patches.sort(key=lambda x: x.horizontal_center)
+
+    # Find all patches containing a color in the last shirt patch.
+    last_shirt_patch = shirts_patches[-1]
+    colors_patches = last_shirt_patch.find("color")
+
+    # Sort the list of colors patches by their horizontal center coordinates.
+    colors_patches.sort(key=lambda x: x.horizontal_center)
+
+    # Return the color of the shirt of the last child.
+    return colors_patches[-1].simple_query("What is this?")
+# Test case 1:
+image = np.array([[['red', 'blue'], ['green', 'yellow']], [['purple', 'orange'], ['pink', 'brown']]])
+assert 
+
+---------------4---------------
+
+---------------5---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the last child from the left of the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    child_patches = image_patch.find("child")
+    child_patches.sort(key=lambda x: x.horizontal_center)
+    last_child = child_patches[-1]
+    return last_child.simple_query("What is the color of the shirt?")
+
+
+---------------5---------------
+
+---------------6---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the last child from the right of the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    child_patches = image_patch.find("child")
+    child_patches.sort(key=lambda x: x.horizontal_center)
+    last_child = child_patches[-1]
+    return last_child.simple_query("What is the color of the shirt?")
+```
+
+---------------6---------------
+
+---------------7---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the first child from the left of the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    children_patches = image_patch.find("child")
+    leftmost_child = sorted(children_patches, key=lambda x: x.horizontal_center)[0]
+    return leftmost_child.simple_query("What is the color of this child's shirt?")
+```
+
+---------------7---------------
+
+---------------8---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the first child from the right of the picture?
+
+
+Code: # Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What color is the shirt of the first child from the right of the picture?
+
+# Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What color is the shirt of the first child from the right of the picture?
+
+# Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What color is the shirt of the first child from the right of the picture?
+
+# Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What color is the shirt of the first child from the right of the picture?
+
+# Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query:
+
+---------------8---------------
+
+---------------9---------------
+
+Image: C:/Users/Felix/viper/testing/images/multiple_cats.jpg
+Query: How many cats are in the image?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize an ImagePatch object with the given image.
+    image_patch = ImagePatch(image)
+
+    # Find all patches containing a cat.
+    cat_patches = image_patch.find("cat")
+
+    # Return the number of cat patches found.
+    return len(cat_patches)
+# Test case 1:
+assert execute_command([[0, 0, 0], [0, 1, 0], [0, 0, 0]]) == 0
+# Test case 2:
+assert execute_command([[0, 0, 0], [0, 1, 0], [0, 1, 0]]) == 2
+# Test case 3:
+assert execute_command([[0, 0, 0], [0, 1, 0], [0, 1, 1]]) == 3
+
+
+---------------9---------------
+
+---------------10---------------
+
+Image: C:/Users/Felix/viper/testing/images/multiple_cats.jpg
+Query: How many cats are sitting or lying on the ground?
+
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+### Best Seller in Artificial Intelligence Products & Services
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------10---------------
+
+---------------11---------------
+
+Image: C:/Users/Felix/viper/testing/images/schnitzel.jpg
+Query: What type of cutlery is used in the image?
+
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+### Best Seller in Artificial Intelligence Products & Services
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------11---------------
+
+---------------12---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red.jpg
+Query: What color do you get if you combine the colors of the flowers?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------12---------------
+
+---------------13---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red.jpg
+Query: What color do you get if you mix the colors of the flowers?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------13---------------
+
+---------------14---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red2.jpg
+Query: What color do you get if you combine the colors of the two flowers?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------14---------------
+
+---------------15---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red2.jpg
+Query: What color do you get if you mix the colors of the two flowers?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------15---------------
+
+---------------16---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip.jpg
+Query: What is the ratio of teachers to children in the image?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize an ImagePatch object with the given image.
+    image_patch = ImagePatch(image)
+
+    # Find all patches containing a teacher and all patches containing a child.
+    teachers = image_patch.find("teacher")
+    children = image_patch.find("child")
+
+    # If there are no teachers or children in the image, return "None".
+    if not (teachers and children):
+        return "None"
+
+    # Sort both lists by vertical center of patches.
+    teachers.sort(key=lambda x: x.vertical_center)
+    children.sort(key=lambda x: x.vertical_center)
+
+    # Initialize variables to keep track of the number of teachers and children in the image.
+    num_teachers = 0
+    num_children = 0
+
+    # Iterate through both lists, comparing the vertical centers of patches.
+    for teacher in teachers:
+        for child in children:
+            if teacher.vertical_center < child.vertical_center:
+                num_teachers += 1
+                break
+            else:
+                num_children += 1
+
+    # Return the ratio of teachers to children as a string.
+    return f"{num_teachers} : {num_children}"
+
+
+---------------16---------------
+
+---------------17---------------
+
+Image: C:/Users/Felix/viper/testing/images/cat_computer.jpg
+Query: What sticker is in the bottom-right corner of the laptop?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------17---------------
+
+---------------18---------------
+
+Image: C:/Users/Felix/viper/testing/images/pizza.jpg
+Query: What are the toppings of the top-right pizza?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize an ImagePatch object with the given image.
+    image_patch = ImagePatch(image)
+
+    # Find all patches containing a pizza in the image.
+    pizza_patches = image_patch.find("pizza")
+
+    # Sort the pizza patches by their vertical center coordinate, from top to bottom.
+    pizza_patches.sort(key=lambda x: x.vertical_center)
+
+    # Find all patches containing a topping in the image.
+    topping_patches = image_patch.find("topping")
+
+    # Sort the topping patches by their vertical center coordinate, from top to bottom.
+    topping_patches.sort(key=lambda x: x.vertical_center)
+
+    # Find the pizza patch with the highest vertical center coordinate (i.e., the top-right pizza).
+    top_pizza = pizza_patches[-1]
+
+    # Initialize an empty list to store the toppings of the top-right pizza.
+    top_toppings = []
+
+    # Iterate over each topping patch in the image.
+    for topping in topping_patches:
+        # If the topping patch overlaps with the top-right pizza, add it to the list of toppings.
+        if top_pizza.overlaps_with(topping.left, topping.lower, topping.right, topping.upper):
+            top_toppings.append(topping)
+
+    # Initialize an empty string to store the answer.
+    answer = ""
+
+    # Iterate over each topping patch in the list of toppings of the top-right pizza.
+    for i, topping in enumerate(top_toppings):
+        # If this is not the first topping, add a comma and space before its name.
+        if i > 0:
+            answer += ", "
+
+        # Add the name of the topping to the answer string.
+        answer += topping.simple_query("What is the name of this topping?")
+
+    # Return the answer string.
+    return answer
+# Test case 1:
+assert
+
+---------------18---------------
+
+---------------19---------------
+
+Image: C:/Users/Felix/viper/testing/images/different_animals.jpg
+Query: How many animals are in the image?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------19---------------
+
+---------------20---------------
+
+Image: C:/Users/Felix/viper/testing/images/different_animals.jpg
+Query: How many different animals are in the image?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------20---------------
+
+---------------21---------------
+
+Image: C:/Users/Felix/viper/testing/images/competition_building.jpg
+Query: Tell me about the competition between the two skyscrapers in the image.
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    skyscraper_patches = image_patch.find("skyscraper")
+    if len(skyscraper_patches) != 2:
+        return "There are not two skyscrapers in the image."
+    else:
+        skyscraper1, skyscraper2 = skyscraper_patches[0], skyscraper_patches[1]
+        if skyscraper1.vertical_center < skyscraper2.vertical_center:
+            return f"{skyscraper1.simple_query('What is the name of this building?')} is taller than {skyscraper2.simple_query('What is the name of this building?')}"
+        else:
+            return f"{skyscraper2.simple_query('What is the name of this building?')} is taller than {skyscraper1.simple_query('What is the name of this building?')}"
+
+
+---------------21---------------
+
+---------------22---------------
+
+Image: C:/Users/Felix/viper/testing/images/multiple_cars.jpg
+Query: What would the founder of the brand of the car on the left say to the founders of the brand of the other cars?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------22---------------
+
+---------------23---------------
+
+Image: C:/Users/Felix/viper/testing/images/lion_cheetah_tiger.jpg
+Query: Which animal, from the picture, is the fastest?
+
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+### Best Seller in Art & Photography Books
+Become an expert in art and photography with "The Art of Photography"
+
+##### DK
+# Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+### Best Seller in Art & Photography Books
+Become an expert in art and photography with "The Art of Photography"
+
+##### DK
+
+---------------23---------------
+
+---------------24---------------
+
+Image: C:/Users/Felix/viper/testing/images/lion_cheetah_tiger.jpg
+Query: Which Feline animal, from the picture, is the fastest?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    """
+    This function takes an image as input and returns a string describing the fastest feline animal in the image.
+    """
+    # Create an ImagePatch object from the image
+    image_patch = ImagePatch(image)
+
+    # Find all patches of cats in the image
+    cat_patches = image_patch.find("cat")
+
+    # Sort the cat patches by their speed (using the simple_query function)
+    cat_patches.sort(key=lambda x: float(x.simple_query("What is the speed of this cat?")))
+
+    # Return the name of the fastest cat
+    return cat_patches[-1].simple_query("What is the name of this cat?")
+
+---------------24---------------
+
+---------------25---------------
+
+Image: C:/Users/Felix/viper/testing/images/lion_cheetah_tiger.jpg
+Query: Which of the three Feline animals from the picture, is the fastest?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+#     image_patch = ImagePatch(image)
+#     feline_patches = image_patch.find("feline")
+#     fastest_feline = None
+#     for feline in feline_patches:
+#         if not fastest_feline or feline.compute_depth() < fastest_feline.compute_depth():
+#             fastest_feline = feline
+#     return fastest_feline.simple_query("What is the name of this feline?")
+
+---------------25---------------
+
+---------------26---------------
+
+Image: C:/Users/Felix/viper/testing/images/teddy.jpg
+Query: The real live version of this toy does what in the winter?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------26---------------
+
+---------------27---------------
+
+Image: C:/Users/Felix/viper/testing/images/teddy.jpg
+Query: The real live version of this toy animal does what in the winter?
+
+
+Code: # In[ ]:
+
+
+
+
+
+---------------27---------------
+
+---------------28---------------
+
+Image: C:/Users/Felix/viper/testing/images/what_sport.jpg
+Query: What sports are typically played in the arena in the picture?
+
+
+Code: # Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What sports are typically played in the arena in the picture? 
+
+# Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What sports are typically played in the arena in the picture? 
+
+# Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What sports are typically played in the arena in the picture? 
+
+# Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What sports are typically played in the arena in the picture? 
+
+# Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What sports are typically played in the arena in the picture
+
+---------------28---------------
+
+---------------29---------------
+
+Image: C:/Users/Felix/viper/testing/images/word_text.png
+Query: What is the word in the image?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize an ImagePatch object with the given image.
+    image_patch = ImagePatch(image)
+
+    # Find all words in the image.
+    word_patches = image_patch.find("word")
+
+    # If no words are found, return "No words found.".
+    if len(word_patches) == 0:
+        return "No words found."
+
+    # Sort the word patches by their vertical center.
+    word_patches.sort(key=lambda x: x.vertical_center)
+
+    # Return the text of the topmost word.
+    return word_patches[0].simple_query("What is this word?")
+# Test case 1:
+image = np.array([[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+
+---------------29---------------
+
+---------------30---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What company is displayed on the advertisement banner?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------30---------------
+
+---------------31---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What airline company is displayed on the advertisement banner?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------31---------------
+
+---------------32---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What airline company is displayed on the football advertisement banner?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------32---------------
+
+---------------33---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What global airline company is displayed on the advertisement banner?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------33---------------
+
+---------------34---------------
+
+Image: C:/Users/Felix/viper/testing/images/mistake.jpg
+Query: What is the mistake in the image?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize an ImagePatch object with the given image.
+    image_patch = ImagePatch(image)
+
+    # Find all patches of the word "mistake" in the image.
+    mistake_patches = image_patch.find("mistake")
+
+    # If no such patches are found, return "no mistake".
+    if len(mistake_patches) == 0:
+        return "no mistake"
+
+    # Otherwise, find all patches of the word "in" in the image.
+    in_patches = image_patch.find("in")
+
+    # If no such patches are found, return "mistake".
+    if len(in_patches) == 0:
+        return "mistake"
+
+    # Otherwise, find all patches of the word "the" in the image.
+    the_patches = image_patch.find("the")
+
+    # If no such patches are found, return "mistake".
+    if len(the_patches) == 0:
+        return "mistake"
+
+    # Otherwise, find all patches of the word "image" in the image.
+    image_patches = image_patch.find("image")
+
+    # If no such patches are found, return "mistake".
+    if len(image_patches) == 0:
+        return "mistake"
+
+    # Otherwise, find all patches of the word "is" in the image.
+    is_patches = image_patch.find("is")
+
+    # If no such patches are found, return "mistake".
+    if len(is_patches) == 0:
+        return "mistake"
+
+    # Otherwise, find all patches of the word "not" in the image.
+    not_patches = image_patch.find("not")
+
+    # If no such patches are found, return "mistake".
+    if len(not_patches) == 0:
+        return "mistake"
+
+    # Otherwise, find all patches of the word "correct" in the image.
+
+---------------34---------------
+
+---------------35---------------
+
+Image: C:/Users/Felix/viper/testing/images/mistake.jpg
+Query: What is the spelling mistake in the image?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    word_patches = image_patch.find("word")
+    for word_patch in word_patches:
+        if not word_patch.verify_property("word", "spelled correctly"):
+            return word_patch.simple_query("What is the spelling mistake?")
+```
+
+
+
+
+---------------35---------------
+
+---------------36---------------
+
+Image: C:/Users/Felix/viper/testing/images/what_book_series.jpg
+Query: What is the name of the longest book series on the shelf?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+#     image_patch = ImagePatch(image)
+#     book_series_patches = image_patch.find("book series")
+#     longest_book_series_patch = None
+#     for book_series_patch in book_series_patches:
+#         if longest_book_series_patch is None or longest_book_series_patch.width < book_series_patch.width:
+#             longest_book_series_patch = book_series_patch
+#     return longest_book_series_patch.llm_query("What is the name of this book series?", long_answer=False)
+
+---------------36---------------
+
+---------------37---------------
+
+Image: C:/Users/Felix/viper/testing/images/what_book_series.jpg
+Query: What are the names of the books on the shelf, which has the longest series?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+#     image_patch = ImagePatch(image)
+#     book_patches = image_patch.find("book")
+#     shelf_patches = image_patch.find("shelf")
+#     longest_series_shelf = None
+#     for shelf in shelf_patches:
+#         if longest_series_shelf is None or len(longest_series_shelf) < len(shelf):
+#             longest_series_shelf = shelf
+#     book_names = []
+#     for book in book_patches:
+#         if book.overlaps_with(longest_series_shelf.left, longest_series_shelf.lower, longest_series_shelf.right, longest_series_shelf.upper):
+#             book_names.append(book.simple_query("What is the name of this book?"))
+#     return book_names
+
+---------------37---------------
+
+---------------38---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class.jpg
+Query: What are the students learning in the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize an ImagePatch object with the given image.
+    image_patch = ImagePatch(image)
+
+    # Find all patches containing a student.
+    student_patches = image_patch.find("student")
+
+    # If no students are found, return "No students."
+    if len(student_patches) == 0:
+        return "No students."
+
+    # Initialize an empty list to store the learning activities of each student.
+    learning_activities = []
+
+    # Iterate over each student patch.
+    for student in student_patches:
+        # Find all patches containing a blackboard or chalkboard.
+        board_patches = image_patch.find("blackboard") + image_patch.find("chalkboard")
+
+        # If no boards are found, return "No boards."
+        if len(board_patches) == 0:
+            return "No boards."
+
+        # Find the board closest to the student.
+        closest_board = min(board_patches, key=lambda x: distance(x, student))
+
+        # If the student is not facing the board, return "Student not facing board."
+        if not student.verify_property("student", "facing"):
+            return "Student not facing board."
+
+        # Find all patches containing a teacher.
+        teacher_patches = image_patch.find("teacher")
+
+        # If no teachers are found, return "No teachers."
+        if len(teacher_patches) == 0:
+            return "No teachers."
+
+        # Find the teacher closest to the student.
+        closest_teacher = min(teacher_patches, key=lambda x: distance(x, student))
+
+        # If the teacher is not facing the board, return "Teacher not facing board."
+        if not closest_teacher.verify_property("teacher", "facing"):
+            return "Teacher not facing board."
+
+        # Find all patches containing a book or textbook.
+        book_patches = image_patch.find("book") + image_patch.find("textbook")
+
+
+
+---------------38---------------
+
+---------------39---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What are the students learning in the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize an ImagePatch object with the given image.
+    image_patch = ImagePatch(image)
+
+    # Find all patches containing a student.
+    student_patches = image_patch.find("student")
+
+    # If no students are found, return "No students."
+    if len(student_patches) == 0:
+        return "No students."
+
+    # Initialize an empty list to store the learning activities of each student.
+    learning_activities = []
+
+    # Iterate over each student patch.
+    for student in student_patches:
+        # Find all patches containing a blackboard or chalkboard.
+        board_patches = image_patch.find("blackboard") + image_patch.find("chalkboard")
+
+        # If no boards are found, return "No boards."
+        if len(board_patches) == 0:
+            return "No boards."
+
+        # Find the board closest to the student.
+        closest_board = min(board_patches, key=lambda x: distance(x, student))
+
+        # If the student is not facing the board, return "Student not facing board."
+        if not student.verify_property("student", "facing"):
+            return "Student not facing board."
+
+        # Find all patches containing a teacher.
+        teacher_patches = image_patch.find("teacher")
+
+        # If no teachers are found, return "No teachers."
+        if len(teacher_patches) == 0:
+            return "No teachers."
+
+        # Find the teacher closest to the student.
+        closest_teacher = min(teacher_patches, key=lambda x: distance(x, student))
+
+        # If the teacher is not facing the board, return "Teacher not facing board."
+        if not closest_teacher.verify_property("teacher", "facing"):
+            return "Teacher not facing board."
+
+        # Find all patches containing a book or textbook.
+        book_patches = image_patch.find("book") + image_patch.find("textbook")
+
+
+
+---------------39---------------
+
+---------------40---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What common school subject is the student learning in the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize an ImagePatch object with the given image.
+    image_patch = ImagePatch(image)
+
+    # Find all patches containing a "book" in the image.
+    book_patches = image_patch.find("book")
+
+    # If no books are found, return "None".
+    if len(book_patches) == 0:
+        return "None"
+
+    # Find all patches containing a "student" in the image.
+    student_patches = image_patch.find("student")
+
+    # If no students are found, return "None".
+    if len(student_patches) == 0:
+        return "None"
+
+    # Find all patches containing a "desk" in the image.
+    desk_patches = image_patch.find("desk")
+
+    # If no desks are found, return "None".
+    if len(desk_patches) == 0:
+        return "None"
+
+    # Find all patches containing a "chair" in the image.
+    chair_patches = image_patch.find("chair")
+
+    # If no chairs are found, return "None".
+    if len(chair_patches) == 0:
+        return "None"
+
+    # Find all patches containing a "whiteboard" in the image.
+    whiteboard_patches = image_patch.find("whiteboard")
+
+    # If no whiteboards are found, return "None".
+    if len(whiteboard_patches) == 0:
+        return "None"
+
+    # Find all patches containing a "blackboard" in the image.
+    blackboard_patches = image_patch.find("blackboard")
+
+    # If no blackboards are found, return "None".
+    if len(blackboard_patches) == 0:
+        return "None"
+
+    # Find all patches containing a "clock" in the image.
+    clock_patches = image_patch.find("clock")
+
+    # If no clocks are found, return "None".
+    if len(clock_patches)
+
+---------------40---------------
+
+---------------41---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What subject is the student writing on the board in the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------41---------------
+
+---------------42---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What school subject is the student writing on the board in the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------42---------------
+
+---------------43---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: Decribe what is on the image.
+
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+### Best Seller Rank: 10
+
+### User Review Score: 4.5 out of 5 stars
+
+### Price: $29.99
+
+---------------43---------------
+
+---------------44---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: How many virtual characters can be seen in the image?
+
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+### Best Seller in Artificial Intelligence Products & Services
+
+
+
+---------------44---------------
+
+---------------45---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: What is the name of the oldest champion in the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------45---------------
+
+---------------46---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: What is the name of the oldest League of Legends champion in the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------46---------------
+
+---------------47---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: In the picture are the League of Legends champions Lux, Jinx, Yasuo and Blitzcrank. Return the ImagePatch and the name of the oldest of these four champions.
+
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+# 
+# Query: In the picture are the League of Legends champions Lux, Jinx, Yasuo and Blitzcrank. Return the ImagePatch and the name of the oldest of these four champions.
+
+---------------47---------------
+
+---------------48---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the holiday depicted in the image?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize ImagePatch object with image
+    image_patch = ImagePatch(image)
+
+    # Find all patches containing a "holiday"
+    holiday_patches = image_patch.find("holiday")
+
+    # If no holidays are found, return "None"
+    if len(holiday_patches) == 0:
+        return "None"
+
+    # Sort the holiday patches by their vertical center
+    holiday_patches.sort(key=lambda x: x.vertical_center)
+
+    # Return the name of the holiday in the topmost patch
+    return holiday_patches[0].simple_query("What is the name of this holiday?")
+# Test case 1:
+assert execute_command(ImagePatch([[[255, 0, 0], [255, 0, 0]], [[0, 255, 0], [0, 255, 0]]])) == "None"
+# Test case 2:
+assert execute_command(ImagePatch([[[255, 0, 0], [255, 0, 0]], [[0, 255, 0], [0, 255, 0]]])) == "None"
+# Test case 3:
+assert execute_command(ImagePatch([[[255, 0, 0], [255, 0, 0]], [[0, 255, 0], [0, 255, 0]]])) == "None"
+# Test case 4:
+assert execute_command(ImagePatch([[[255, 0, 0], [255, 0, 0]], [[0, 255, 0], [0, 255, 0]]])) == "None"
+# Test case 5:
+assert execute_command(ImagePatch([[[255, 0, 0], [255, 0, 0]], [[0, 255, 0], [0, 255, 0]]])) == "None"
+#
+
+---------------48---------------
+
+---------------49---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the Christian holiday depicted in the image?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Your code here
+    pass
+
+
+
+---------------49---------------
+
+---------------50---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the Christian holiday associated with the image?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # Initialize an ImagePatch object from the input image.
+    image_patch = ImagePatch(image)
+
+    # Find all patches in the image that contain a Christmas tree.
+    christmas_tree_patches = image_patch.find("Christmas tree")
+
+    # If no such patches are found, return "None".
+    if len(christmas_tree_patches) == 0:
+        return "None"
+
+    # Otherwise, find the patch that is closest to the center of the image.
+    closest_patch = christmas_tree_patches[0]
+    for patch in christmas_tree_patches:
+        if distance(image_patch, patch) < distance(image_patch, closest_patch):
+            closest_patch = patch
+
+    # Return the name of the holiday associated with this Christmas tree.
+    return closest_patch.llm_query("What is the name of the Christian holiday associated with this Christmas tree?")
+# Test case 1:
+image_file = "christmas_tree_test.png"
+image = np.array(Image.open(image_file))
+assert 
+
+---------------50---------------
+
+---------------51---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the Christian holiday associated with this image of Jesus?
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    jesus_patches = image_patch.find("Jesus")
+    if len(jesus_patches) == 0:
+        return "No Jesus found"
+    else:
+        jesus_patch = jesus_patches[0]
+        holiday = jesus_patch.llm_query("What is the name of the Christian holiday associated with this image of Jesus?")
+        return f"The answer is {holiday}"
+
+
+---------------51---------------
+

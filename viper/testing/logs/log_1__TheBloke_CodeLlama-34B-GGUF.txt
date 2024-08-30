@@ -1,0 +1,996 @@
+THIS IS A RERUN FROM A LOG FILEs 
+Code Log Files:
+---------------1---------------
+C:/Users/Felix/viper/testing/logsNoResult/log_NR4_TheBloke_CodeLlama-34B-GGUF.txtConfig Variables:
+{'multiprocessing': False, 'path_pretrained_models': './pretrained_models', 'execute_code': False, 'dataset': {'dataset_name': 'MyDataset', 'data_path': 'data', 'split': '', 'max_samples': None, 'batch_size': 20, 'start_sample': 0}, 'load_models': {'maskrcnn': False, 'clip': False, 'glip': True, 'owlvit': False, 'tcl': False, 'gpt3_qa': True, 'gpt3_general': True, 'depth': True, 'blip': True, 'saliency': False, 'xvlm': True, 'codex': False, 'codellama': False, 'lm_studio': True}, 'detect_thresholds': {'glip': 0.5, 'maskrcnn': 0.8, 'owlvit': 0.1}, 'ratio_box_area_to_image_area': 0.0, 'crop_larger_margin': True, 'verify_property': {'model': 'xvlm', 'thresh_clip': 0.6, 'thresh_tcl': 0.25, 'thresh_xvlm': 0.6}, 'best_match_model': 'xvlm', 'gpt3': {'n_votes': 1, 'qa_prompt': './prompts/gpt3/gpt3_qa.txt', 'guess_prompt': './prompts/gpt3/gpt3_process_guess.txt', 'temperature': 0.0, 'model': 'gpt-3.5-turbo'}, 'codex': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'gpt-3.5-turbo'}, 'save': True, 'save_new_results': True, 'results_dir': './results/', 'use_cache': True, 'clear_cache': False, 'use_cached_codex': False, 'cached_codex_path': '', 'log_every': 20, 'wandb': False, 'blip_half_precision': True, 'blip_v2_model_type': 'blip2-flan-t5-xl', 'use_fixed_code': False, 'fixed_code_file': './prompts/fixed_code/blip2.prompt', 'qa_model': 'TheBloke/WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF', 'lm_studio': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'TheBloke/WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF'}}
+Code Generator AI:
+lm_studio TheBloke_WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF
+---------------1---------------
+
+---------------2---------------
+C:/Users/Felix/viper/testing/logsNoResult/log_NR5_TheBloke_CodeLlama-34B-GGUF.txtConfig Variables:
+{'multiprocessing': False, 'path_pretrained_models': './pretrained_models', 'execute_code': False, 'dataset': {'dataset_name': 'MyDataset', 'data_path': 'data', 'split': '', 'max_samples': None, 'batch_size': 20, 'start_sample': 0}, 'load_models': {'maskrcnn': False, 'clip': False, 'glip': True, 'owlvit': False, 'tcl': False, 'gpt3_qa': True, 'gpt3_general': True, 'depth': True, 'blip': True, 'saliency': False, 'xvlm': True, 'codex': False, 'codellama': False, 'lm_studio': True}, 'detect_thresholds': {'glip': 0.5, 'maskrcnn': 0.8, 'owlvit': 0.1}, 'ratio_box_area_to_image_area': 0.0, 'crop_larger_margin': True, 'verify_property': {'model': 'xvlm', 'thresh_clip': 0.6, 'thresh_tcl': 0.25, 'thresh_xvlm': 0.6}, 'best_match_model': 'xvlm', 'gpt3': {'n_votes': 1, 'qa_prompt': './prompts/gpt3/gpt3_qa.txt', 'guess_prompt': './prompts/gpt3/gpt3_process_guess.txt', 'temperature': 0.0, 'model': 'gpt-3.5-turbo'}, 'codex': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'gpt-3.5-turbo'}, 'save': True, 'save_new_results': True, 'results_dir': './results/', 'use_cache': True, 'clear_cache': False, 'use_cached_codex': False, 'cached_codex_path': '', 'log_every': 20, 'wandb': False, 'blip_half_precision': True, 'blip_v2_model_type': 'blip2-flan-t5-xl', 'use_fixed_code': False, 'fixed_code_file': './prompts/fixed_code/blip2.prompt', 'qa_model': 'TheBloke/WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF', 'lm_studio': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'TheBloke/WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF'}}
+Code Generator AI:
+lm_studio TheBloke_WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF
+---------------2---------------
+
+---------------3---------------
+C:/Users/Felix/viper/testing/logsNoResult/log_NR6_TheBloke_CodeLlama-34B-GGUF.txtConfig Variables:
+{'multiprocessing': False, 'path_pretrained_models': './pretrained_models', 'execute_code': False, 'dataset': {'dataset_name': 'MyDataset', 'data_path': 'data', 'split': '', 'max_samples': None, 'batch_size': 20, 'start_sample': 0}, 'load_models': {'maskrcnn': False, 'clip': False, 'glip': True, 'owlvit': False, 'tcl': False, 'gpt3_qa': True, 'gpt3_general': True, 'depth': True, 'blip': True, 'saliency': False, 'xvlm': True, 'codex': False, 'codellama': False, 'lm_studio': True}, 'detect_thresholds': {'glip': 0.5, 'maskrcnn': 0.8, 'owlvit': 0.1}, 'ratio_box_area_to_image_area': 0.0, 'crop_larger_margin': True, 'verify_property': {'model': 'xvlm', 'thresh_clip': 0.6, 'thresh_tcl': 0.25, 'thresh_xvlm': 0.6}, 'best_match_model': 'xvlm', 'gpt3': {'n_votes': 1, 'qa_prompt': './prompts/gpt3/gpt3_qa.txt', 'guess_prompt': './prompts/gpt3/gpt3_process_guess.txt', 'temperature': 0.0, 'model': 'gpt-3.5-turbo'}, 'codex': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'gpt-3.5-turbo'}, 'save': True, 'save_new_results': True, 'results_dir': './results/', 'use_cache': True, 'clear_cache': False, 'use_cached_codex': False, 'cached_codex_path': '', 'log_every': 20, 'wandb': False, 'blip_half_precision': True, 'blip_v2_model_type': 'blip2-flan-t5-xl', 'use_fixed_code': False, 'fixed_code_file': './prompts/fixed_code/blip2.prompt', 'qa_model': 'TheBloke/WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF', 'lm_studio': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'TheBloke/WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF'}}
+Code Generator AI:
+lm_studio TheBloke_WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF
+---------------3---------------
+
+---------------4---------------
+C:/Users/Felix/viper/testing/logsNoResult/log_NR7_TheBloke_CodeLlama-34B-GGUF.txtConfig Variables:
+{'multiprocessing': False, 'path_pretrained_models': './pretrained_models', 'execute_code': False, 'dataset': {'dataset_name': 'MyDataset', 'data_path': 'data', 'split': '', 'max_samples': None, 'batch_size': 20, 'start_sample': 0}, 'load_models': {'maskrcnn': False, 'clip': False, 'glip': True, 'owlvit': False, 'tcl': False, 'gpt3_qa': True, 'gpt3_general': True, 'depth': True, 'blip': True, 'saliency': False, 'xvlm': True, 'codex': False, 'codellama': False, 'lm_studio': True}, 'detect_thresholds': {'glip': 0.5, 'maskrcnn': 0.8, 'owlvit': 0.1}, 'ratio_box_area_to_image_area': 0.0, 'crop_larger_margin': True, 'verify_property': {'model': 'xvlm', 'thresh_clip': 0.6, 'thresh_tcl': 0.25, 'thresh_xvlm': 0.6}, 'best_match_model': 'xvlm', 'gpt3': {'n_votes': 1, 'qa_prompt': './prompts/gpt3/gpt3_qa.txt', 'guess_prompt': './prompts/gpt3/gpt3_process_guess.txt', 'temperature': 0.0, 'model': 'gpt-3.5-turbo'}, 'codex': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'gpt-3.5-turbo'}, 'save': True, 'save_new_results': True, 'results_dir': './results/', 'use_cache': True, 'clear_cache': False, 'use_cached_codex': False, 'cached_codex_path': '', 'log_every': 20, 'wandb': False, 'blip_half_precision': True, 'blip_v2_model_type': 'blip2-flan-t5-xl', 'use_fixed_code': False, 'fixed_code_file': './prompts/fixed_code/blip2.prompt', 'qa_model': 'TheBloke/WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF', 'lm_studio': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'TheBloke/WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF'}}
+Code Generator AI:
+lm_studio TheBloke_WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF
+---------------4---------------
+
+
+
+Time:
+2024-07-14 21:10:51.357307
+
+---------------1---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/1_kids_muffins.jpg
+Query: How many muffins can each kid have for it to be fair?
+
+Result: 3
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    kids = image_patch.find("kid")
+    muffin_counts = []
+    for kid in kids:
+        muffins = kid.find("muffin")
+        muffin_counts.append(len(muffins))
+    return str(max(muffin_counts))
+
+
+---------------1---------------
+
+---------------1---------------
+
+---------------2---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/drinks.jpg
+Query: Return the image patches and names of drinks without alcohol.
+
+Result: Code execution failed. Error: max() arg is an empty sequence
+
+Code: # Q: Return the image patches and names of drinks without alcohol.
+
+
+---------------1---------------
+
+---------------2---------------
+
+---------------3---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: How many children are in the picture?
+
+Result: 6
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    child_patches = image_patch.find("child")
+    return len(child_patches)
+
+
+---------------1---------------
+
+---------------3---------------
+
+---------------4---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the last child?
+
+Result: 6
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What color is the shirt of the last child?  
+
+
+---------------1---------------
+
+---------------4---------------
+
+---------------5---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the last child from the left of the picture?
+
+Result: green
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    children_patches = image_patch.find("child")
+    children_patches.sort(key=lambda x: x.horizontal_center)
+    last_child_patch = children_patches[-1]
+    shirt_patches = last_child_patch.find("shirt")
+    shirt_patch = shirt_patches[0]
+    return shirt_patch.best_text_match(["red", "blue", "green"])
+
+
+---------------1---------------
+
+---------------5---------------
+
+---------------6---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the last child from the right of the picture?
+
+Result: green
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    children_patches = image_patch.find("child")
+    children_patches.sort(key=lambda x: x.horizontal_center, reverse=True)
+    child_patch = children_patches[0]
+    shirt_patches = child_patch.find("shirt")
+    shirt_patch = shirt_patches[0]
+    return shirt_patch.simple_query("What is the color?")
+
+
+---------------1---------------
+
+---------------6---------------
+
+---------------7---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the first child from the left of the picture?
+
+Result: yellow
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    children_patches = image_patch.find("child")
+    if len(children_patches) == 0:
+        return "no child"
+    else:
+        children_patches.sort(key=lambda x: x.horizontal_center)
+        shirt_patches = children_patches[0].find("shirt")
+        if len(shirt_patches) == 0:
+            return "no shirt"
+        else:
+            return shirt_patches[0].simple_query("What is the color?")
+
+
+---------------1---------------
+
+---------------7---------------
+
+---------------8---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the first child from the right of the picture?
+
+Result: green
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    children_patches = image_patch.find("child")
+    children_patches.sort(key=lambda x: x.horizontal_center)
+    child_patch = children_patches[-1]
+    shirt_patches = child_patch.find("shirt")
+    shirt_patch = shirt_patches[0]
+    return shirt_patch.best_text_match(["red", "blue", "green"])
+
+
+---------------1---------------
+
+---------------8---------------
+
+---------------9---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/multiple_cats.jpg
+Query: How many cats are in the image?
+
+Result: 20
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    cat_patches = image_patch.find("cat")
+    return len(cat_patches)
+
+
+---------------1---------------
+
+---------------9---------------
+
+---------------10---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/multiple_cats.jpg
+Query: How many cats are sitting or lying on the ground?
+
+Result: 0
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    cat_patches = image_patch.find("cat")
+    cat_patches.sort(key=lambda x: x.vertical_center)
+    cats_on_ground = 0
+    for cat in cat_patches:
+        if cat.simple_query("Is the cat sitting or lying on the ground?") == "yes":
+            cats_on_ground += 1
+    return str(cats_on_ground)
+
+
+---------------1---------------
+
+---------------10---------------
+
+---------------11---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/schnitzel.jpg
+Query: What type of cutlery is used in the image?
+
+Result: Code execution failed. Error: ImagePatch.simple_query() missing 1 required positional argument: 'question'
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    cutlery_patches = image_patch.find("cutlery")
+    if len(cutlery_patches) == 0:
+        return "no cutlery"
+    else:
+        return cutlery_patches[0].simple_query()
+
+
+---------------1---------------
+
+---------------11---------------
+
+---------------12---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red.jpg
+Query: What color do you get if you combine the colors of the flowers?
+
+Result: no cutlery
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What color do you get if you combine the colors of the flowers?  
+
+
+---------------1---------------
+
+---------------12---------------
+
+---------------13---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red.jpg
+Query: What color do you get if you mix the colors of the flowers?
+
+Result: Code execution failed. Error: expected an indented block after function definition on line 1 (<codex>, at certain line)
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax) -> List[ImagePatch]:
+
+
+---------------1---------------
+
+---------------13---------------
+
+---------------14---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red2.jpg
+Query: What color do you get if you combine the colors of the two flowers?
+
+Result: Code execution failed. Error: expected an indented block after function definition on line 1 (<codex>, at certain line)
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax) -> List[ImagePatch]:
+
+
+---------------1---------------
+
+---------------14---------------
+
+---------------15---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red2.jpg
+Query: What color do you get if you mix the colors of the two flowers?
+
+Result: red and blue and blue
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    flower_patches = image_patch.find("flower")
+    flower_colors = [flower_patch.simple_query("What is the color?") for flower_patch in flower_patches]
+    return " and ".join(flower_colors)
+
+
+---------------1---------------
+
+---------------15---------------
+
+---------------16---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip.jpg
+Query: What is the ratio of teachers to children in the image?
+
+Result: None
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    '''
+    Returns a string describing the ratio of teachers to children in the image.
+    '''
+    # YOUR CODE HERE
+    return None
+
+
+---------------1---------------
+
+---------------16---------------
+
+---------------17---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/cat_computer.jpg
+Query: What sticker is in the bottom-right corner of the laptop?
+
+Result: None
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+
+---------------1---------------
+
+---------------17---------------
+
+---------------18---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/pizza.jpg
+Query: What are the toppings of the top-right pizza?
+
+Result: None
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+
+---------------1---------------
+
+---------------18---------------
+
+---------------19---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/different_animals.jpg
+Query: How many animals are in the image?
+
+Result: 9
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    animal_patches = image_patch.find("animal")
+    return len(animal_patches)
+
+
+---------------1---------------
+
+---------------19---------------
+
+---------------20---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/different_animals.jpg
+Query: How many different animals are in the image?
+
+Result: 9
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+
+---------------1---------------
+
+---------------20---------------
+
+---------------21---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/competition_building.jpg
+Query: Tell me about the competition between the two skyscrapers in the image.
+
+Result: person and person are competing for the title of tallest building in the world.
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    building_patches = image_patch.find("building")
+    building_patches.sort(key=lambda x: x.vertical_center)
+    building_a, building_b = building_patches[0], building_patches[1]
+    building_a_name = building_a.simple_query("What is the name of the building?")
+    building_b_name = building_b.simple_query("What is the name of the building?")
+    return f"{building_a_name} and {building_b_name} are competing for the title of tallest building in the world."
+
+
+---------------1---------------
+
+---------------21---------------
+
+---------------22---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/multiple_cars.jpg
+Query: What would the founder of the brand of the car on the left say to the founders of the brand of the other cars?
+
+Result: Code execution failed. Error: invalid syntax (<codex>, at certain line)
+
+Code: Comment: Please provide enough code so others can better understand or reproduce the problem.
+
+
+---------------1---------------
+
+---------------22---------------
+
+---------------23---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/lion_cheetah_tiger.jpg
+Query: Which animal, from the picture, is the fastest?
+
+Result: Code execution failed. Error: list index out of range
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+
+---------------1---------------
+
+---------------23---------------
+
+---------------24---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/lion_cheetah_tiger.jpg
+Query: Which Feline animal, from the picture, is the fastest?
+
+Result: Code execution failed. Error: list index out of range
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image. Query: Which Feline animal, from the picture, is the fastest? 
+
+
+---------------1---------------
+
+---------------24---------------
+
+---------------25---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/lion_cheetah_tiger.jpg
+Query: Which of the three Feline animals from the picture, is the fastest?
+
+Result: ImagePatch(249, 17, 399, 241)
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    feline_animals = image_patch.find("feline animal")
+    feline_animals.sort(key=lambda x: x.compute_depth())
+    return feline_animals[0]
+
+
+---------------1---------------
+
+---------------25---------------
+
+---------------26---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/teddy.jpg
+Query: The real live version of this toy does what in the winter?
+
+Result: ImagePatch(0, 7, 863, 1000)
+
+Code: # Q: The real live version of this toy does what in the winter?
+
+
+---------------1---------------
+
+---------------26---------------
+
+---------------27---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/teddy.jpg
+Query: The real live version of this toy animal does what in the winter?
+
+Result: ImagePatch(0, 7, 863, 1000)
+
+Code: # Q: The real live version of this toy animal does what in the winter?
+
+
+---------------1---------------
+
+---------------27---------------
+
+---------------28---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/what_sport.jpg
+Query: What sports are typically played in the arena in the picture?
+
+Result: Code execution failed. Error: list index out of range
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+
+---------------1---------------
+
+---------------28---------------
+
+---------------29---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/word_text.png
+Query: What is the word in the image?
+
+Result: hello
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    '''
+    Returns a string containing the word in the image.
+    '''
+    # YOUR CODE HERE
+    return 'hello'
+
+
+---------------1---------------
+
+---------------29---------------
+
+---------------30---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What company is displayed on the advertisement banner?
+
+Result: I'm sorry, could you please provide more context or details so I can accurately determine the name of the company you are referring to? is displayed on the advertisement banner
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    banner_patches = image_patch.find("advertisement banner")
+    if len(banner_patches) == 0:
+        return "no advertisement banners"
+    else:
+        banner_patch = banner_patches[0]
+        company_name = banner_patch.llm_query("What is the name of the company?")
+        return f"{company_name} is displayed on the advertisement banner"
+
+
+---------------1---------------
+
+---------------30---------------
+
+---------------31---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What airline company is displayed on the advertisement banner?
+
+Result: None
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # TODO: Write your code here
+    return None
+
+
+---------------1---------------
+
+---------------31---------------
+
+---------------32---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What airline company is displayed on the football advertisement banner?
+
+Result: None
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image. Query: What airline company is displayed on the football advertisement banner? 
+
+
+---------------1---------------
+
+---------------32---------------
+
+---------------33---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What global airline company is displayed on the advertisement banner?
+
+Result: None
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # TODO: Write your code here
+    return None
+
+
+---------------1---------------
+
+---------------33---------------
+
+---------------34---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/mistake.jpg
+Query: What is the mistake in the image?
+
+Result: None
+
+Code: # In[ ]:
+
+
+---------------1---------------
+
+---------------34---------------
+
+---------------35---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/mistake.jpg
+Query: What is the spelling mistake in the image?
+
+Result: hoppy
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    word_patches = image_patch.find("word")
+    for word_patch in word_patches:
+        if not word_patch.verify_property("word", "spelling mistake"):
+            return word_patch.simple_query("What is the spelling mistake?")
+
+
+---------------1---------------
+
+---------------35---------------
+
+---------------36---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/what_book_series.jpg
+Query: What is the name of the longest book series on the shelf?
+
+Result: labyrinth
+
+Code: # Q10
+
+
+---------------1---------------
+
+---------------36---------------
+
+---------------37---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/what_book_series.jpg
+Query: What are the names of the books on the shelf, which has the longest series?
+
+Result: Code execution failed. Error: No valid number words found! Please enter a valid number word (eg. two million twenty three thousand and forty nine)
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    book_patches = image_patch.find("book")
+    book_names = [book_patch.simple_query("What is the name of this book?") for book_patch in book_patches]
+    shelf_patches = image_patch.find("shelf")
+    longest_shelf = max(shelf_patches, key=lambda x: x.width)
+    shelf_book_names = [book_name for book_name in book_names if longest_shelf.exists(book_name)]
+    return shelf_book_names
+
+
+---------------1---------------
+
+---------------37---------------
+
+---------------38---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class.jpg
+Query: What are the students learning in the picture?
+
+Result: []
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+
+---------------1---------------
+
+---------------38---------------
+
+---------------39---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What are the students learning in the picture?
+
+Result: Code execution failed. Error: expected ':' (<codex>, at certain line)
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax)
+
+
+---------------1---------------
+
+---------------39---------------
+
+---------------40---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What common school subject is the student learning in the picture?
+
+Result: Code execution failed. Error: max() arg is an empty sequence
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.
+
+
+---------------1---------------
+
+---------------40---------------
+
+---------------41---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What subject is the student writing on the board in the picture?
+
+Result: Code execution failed. Error: 'ImagePatch' object has no attribute 'get_coordinates'
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    student_patches = image_patch.find("student")
+    if len(student_patches) == 0:
+        return "no students"
+    student_patch = student_patches[0]
+    board_patches = image_patch.find("board")
+    if len(board_patches) == 0:
+        return "no boards"
+    board_patch = board_patches[0]
+    if not student_patch.overlaps_with(*board_patch.get_coordinates()):
+        return "student is not writing on the board"
+    text_patches = image_patch.find("text")
+    if len(text_patches) == 0:
+        return "no text"
+    text_patch = text_patches[0]
+    if not student_patch.overlaps_with(*text_patch.get_coordinates()):
+        return "student is not writing on the board"
+    return text_patch.simple_query("What is this?")
+
+
+---------------1---------------
+
+---------------41---------------
+
+---------------42---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What school subject is the student writing on the board in the picture?
+
+Result: The student is writing on the board in a math class.
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    return image_patch.llm_query("What school subject is the student writing on the board in the picture?")
+
+
+---------------1---------------
+
+---------------42---------------
+
+---------------43---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: Decribe what is on the image.
+
+Result: NotImplemented
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    """
+    Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.
+    Consider the following guidelines:
+    - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc.
+    - Use the llm_query function to access external information and answer informational questions not concerning the image.
+    """
+    return "NotImplemented"
+
+
+---------------1---------------
+
+---------------43---------------
+
+---------------44---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: How many virtual characters can be seen in the image?
+
+Result: NotImplemented
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query. Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image. Query: How many virtual characters can be seen in the image? 
+
+
+---------------1---------------
+
+---------------44---------------
+
+---------------45---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: What is the name of the oldest champion in the picture?
+
+Result: NotImplemented
+
+Code: # Q: Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.   Consider the following guidelines: - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc. - Use the llm_query function to access external information and answer informational questions not concerning the image.  Query: What is the name of the oldest champion in the picture?  
+
+
+---------------1---------------
+
+---------------45---------------
+
+---------------46---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: What is the name of the oldest League of Legends champion in the picture?
+
+Result: None
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # TODO: write your code here
+    pass
+
+
+---------------1---------------
+
+---------------46---------------
+
+---------------47---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: In the picture are the League of Legends champions Lux, Jinx, Yasuo and Blitzcrank. Return the ImagePatch and the name of the oldest of these four champions.
+
+Result: None
+
+Code: # Q3
+
+
+---------------1---------------
+
+---------------47---------------
+
+---------------48---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the holiday depicted in the image?
+
+Result: None
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # return "Christmas"
+    pass
+
+
+---------------1---------------
+
+---------------48---------------
+
+---------------49---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the Christian holiday depicted in the image?
+
+Result: None
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    # return "Christmas"
+    pass
+
+
+---------------1---------------
+
+---------------49---------------
+
+---------------50---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the Christian holiday associated with the image?
+
+Result: Easter
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    return image_patch.llm_query("What is the name of the Christian holiday associated with the image?")
+
+
+---------------1---------------
+
+---------------50---------------
+
+---------------51---------------
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the Christian holiday associated with this image of Jesus?
+Result: Code execution failed. Error: invalid syntax (<codex>, at certain line)
+
+Code: Comment: Please provide enough code so others can better understand or reproduce the problem.
+
+
+---------------1---------------
+
+---------------51---------------
+

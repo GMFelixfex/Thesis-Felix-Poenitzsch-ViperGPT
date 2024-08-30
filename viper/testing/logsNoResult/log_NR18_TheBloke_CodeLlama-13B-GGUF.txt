@@ -1,0 +1,894 @@
+Config Variables:
+{'multiprocessing': False, 'path_pretrained_models': './pretrained_models', 'execute_code': False, 'dataset': {'dataset_name': 'MyDataset', 'data_path': 'data', 'split': '', 'max_samples': None, 'batch_size': 20, 'start_sample': 0}, 'load_models': {'maskrcnn': False, 'clip': False, 'glip': True, 'owlvit': False, 'tcl': False, 'gpt3_qa': True, 'gpt3_general': True, 'depth': True, 'blip': True, 'saliency': False, 'xvlm': True, 'codex': False, 'codellama': False, 'lm_studio': True}, 'detect_thresholds': {'glip': 0.5, 'maskrcnn': 0.8, 'owlvit': 0.1}, 'ratio_box_area_to_image_area': 0.0, 'crop_larger_margin': True, 'verify_property': {'model': 'xvlm', 'thresh_clip': 0.6, 'thresh_tcl': 0.25, 'thresh_xvlm': 0.6}, 'best_match_model': 'xvlm', 'gpt3': {'n_votes': 1, 'qa_prompt': './prompts/gpt3/gpt3_qa.txt', 'guess_prompt': './prompts/gpt3/gpt3_process_guess.txt', 'temperature': 0.0, 'model': 'gpt-3.5-turbo'}, 'codex': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'gpt-3.5-turbo'}, 'save': True, 'save_new_results': True, 'results_dir': './results/', 'use_cache': True, 'clear_cache': False, 'use_cached_codex': False, 'cached_codex_path': '', 'log_every': 20, 'wandb': False, 'blip_half_precision': True, 'blip_v2_model_type': 'blip2-flan-t5-xl', 'use_fixed_code': False, 'fixed_code_file': './prompts/fixed_code/blip2.prompt', 'qa_model': 'TheBloke/WizardLM-1.0-Uncensored-CodeLlama-34B-GGUF', 'lm_studio': {'temperature': 0.0, 'best_of': 1, 'max_tokens': 512, 'prompt': './prompts/chatapi.prompt', 'model': 'TheBloke/CodeLlama-13B-GGUF'}}
+Code Generator AI:
+lm_studio TheBloke_CodeLlama-13B-GGUF
+Time:
+2024-07-05 22:44:05.891885
+
+---------------1---------------
+
+Image: C:/Users/Felix/viper/testing/images/1_kids_muffins.jpg
+Query: How many muffins can each kid have for it to be fair?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------1---------------
+
+---------------2---------------
+
+Image: C:/Users/Felix/viper/testing/images/drinks.jpg
+Query: Return the image patches and names of drinks without alcohol.
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------2---------------
+
+---------------3---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: How many children are in the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------3---------------
+
+---------------4---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the last child?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------4---------------
+
+---------------5---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the last child from the left of the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------5---------------
+
+---------------6---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the last child from the right of the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------6---------------
+
+---------------7---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the first child from the left of the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------7---------------
+
+---------------8---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip2.jpg
+Query: What color is the shirt of the first child from the right of the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------8---------------
+
+---------------9---------------
+
+Image: C:/Users/Felix/viper/testing/images/multiple_cats.jpg
+Query: How many cats are in the image?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------9---------------
+
+---------------10---------------
+
+Image: C:/Users/Felix/viper/testing/images/multiple_cats.jpg
+Query: How many cats are sitting or lying on the ground?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    """
+    Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.
+    Consider the following guidelines:
+        - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc.
+        - Use the llm_query function to access external information and answer informational questions not concerning the image.
+    Query: How many cats are sitting or lying on the ground?
+    """
+    # Your code here
+```
+
+### Solution
+
+```python
+def 
+
+---------------10---------------
+
+---------------11---------------
+
+Image: C:/Users/Felix/viper/testing/images/schnitzel.jpg
+Query: What type of cutlery is used in the image?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------11---------------
+
+---------------12---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red.jpg
+Query: What color do you get if you combine the colors of the flowers?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    flower_patches = image_patch.find("flower")
+    for i in range(len(flower_patches)):
+        if i == 0:
+            color1 = flower_patches[i].simple_query("What is the color?")
+        else:
+            color2 = flower_patches[i].simple_query("What is the color?")
+    return "You get a {} and {} combination.".format(color1, color2)
+```
+
+### Question 3
+
+Query: What is the name of the object that is closest to the left edge of the photo?  
+
+### Answer
+
+```python
+def 
+
+---------------12---------------
+
+---------------13---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red.jpg
+Query: What color do you get if you mix the colors of the flowers?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    flower_patches = image_patch.find("flower")
+    for i in range(len(flower_patches)):
+        if i == 0:
+            color1 = flower_patches[i].simple_query("What is the color?")
+        else:
+            color2 = flower_patches[i].simple_query("What is the color?")
+    return "You get a {} and {} color.".format(color1, color2)
+```
+
+### Question 3
+
+Query: What is the name of the object that is closest to the left edge of the photo?  
+
+### Answer
+
+```python
+def 
+
+---------------13---------------
+
+---------------14---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red2.jpg
+Query: What color do you get if you combine the colors of the two flowers?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    flower1_patches = image_patch.find("flower")
+    flower2_patches = image_patch.find("flower")
+    
+    # Question assumes only one flower patch
+    flower1_patch = flower1_patches[0]
+    flower2_patch = flower2_patches[0]
+    
+    color1 = flower1_patch.simple_query("What is the color?")
+    color2 = flower2_patch.simple_query("What is the color?")
+    
+    return "{} and {}".format(color1, color2)
+```
+
+### Question 3: What is this?
+
+Query: What is this?  
+
+### Answer
+
+```python
+def 
+
+---------------14---------------
+
+---------------15---------------
+
+Image: C:/Users/Felix/viper/testing/images/blue_and_red2.jpg
+Query: What color do you get if you mix the colors of the two flowers?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    flower1_patches = image_patch.find("flower")
+    flower2_patches = image_patch.find("flower")
+    
+    # Question assumes only one flower patch
+    flower1_patch = flower1_patches[0]
+    flower2_patch = flower2_patches[0]
+    
+    color1 = flower1_patch.simple_query("What is the color?")
+    color2 = flower2_patch.simple_query("What is the color?")
+    
+    return "You get a {}-{} mix.".format(color1, color2)
+```
+
+### Question 3: What is this?
+
+Query: What is this?  
+
+### Answer
+
+```python
+def 
+
+---------------15---------------
+
+---------------16---------------
+
+Image: C:/Users/Felix/viper/testing/images/field_trip.jpg
+Query: What is the ratio of teachers to children in the image?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------16---------------
+
+---------------17---------------
+
+Image: C:/Users/Felix/viper/testing/images/cat_computer.jpg
+Query: What sticker is in the bottom-right corner of the laptop?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------17---------------
+
+---------------18---------------
+
+Image: C:/Users/Felix/viper/testing/images/pizza.jpg
+Query: What are the toppings of the top-right pizza?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------18---------------
+
+---------------19---------------
+
+Image: C:/Users/Felix/viper/testing/images/different_animals.jpg
+Query: How many animals are in the image?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------19---------------
+
+---------------20---------------
+
+Image: C:/Users/Felix/viper/testing/images/different_animals.jpg
+Query: How many different animals are in the image?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------20---------------
+
+---------------21---------------
+
+Image: C:/Users/Felix/viper/testing/images/competition_building.jpg
+Query: Tell me about the competition between the two skyscrapers in the image.
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------21---------------
+
+---------------22---------------
+
+Image: C:/Users/Felix/viper/testing/images/multiple_cars.jpg
+Query: What would the founder of the brand of the car on the left say to the founders of the brand of the other cars?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------22---------------
+
+---------------23---------------
+
+Image: C:/Users/Felix/viper/testing/images/lion_cheetah_tiger.jpg
+Query: Which animal, from the picture, is the fastest?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------23---------------
+
+---------------24---------------
+
+Image: C:/Users/Felix/viper/testing/images/lion_cheetah_tiger.jpg
+Query: Which Feline animal, from the picture, is the fastest?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------24---------------
+
+---------------25---------------
+
+Image: C:/Users/Felix/viper/testing/images/lion_cheetah_tiger.jpg
+Query: Which of the three Feline animals from the picture, is the fastest?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------25---------------
+
+---------------26---------------
+
+Image: C:/Users/Felix/viper/testing/images/teddy.jpg
+Query: The real live version of this toy does what in the winter?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    qux_patches = image_patch.find('qux')
+    foo_patches = image_patch.find('foo')
+    foo_patch = foo_patches[0]
+    qux_patches.sort(key=lambda x: distance(x, foo_patch))
+    return qux_patches[0]
+```
+
+### Solution
+
+```python
+def 
+
+---------------26---------------
+
+---------------27---------------
+
+Image: C:/Users/Felix/viper/testing/images/teddy.jpg
+Query: The real live version of this toy animal does what in the winter?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    """
+    A Python function that takes an image as input, and returns a string describing the answer to the query.
+    
+    Parameters
+    ----------
+    image : array_like
+        An array-like of the original image.
+        
+    Returns
+    -------
+    str
+        The answer to the query.
+    """
+    # Your code here
+    import math
+    class ImagePatch:
+        """A Python class containing a crop of an image centered around a particular object, as well as relevant information.
+        
+        Attributes
+        ----------
+        cropped_image : array_like
+            An array-like of the cropped image taken from the original image.
+        left, lower, right, upper : int
+            An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.
+        
+        Methods
+        -------
+        find(object_name: str)->List[ImagePatch]
+            Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the
+            image matching the object_name.
+        exists(object_name: str)->bool
+            Returns True if the object specified by object_name is found in the image, and False otherwise.
+        verify_property(property: str)->bool
+            Returns True if the property is met, and False otherwise.
+        best_text_match(option_list: List[str], prefix: str)->str
+            Returns the string that best matches the image.
+        simple_query(question: str=None)->str
+            Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".
+        llm_query(question: str, long_answer: bool)->str
+            References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.
+        compute_depth()->float
+            Returns the median depth of the image crop.
+        crop(left: int, lower: int, right: int, upper: int
+
+---------------27---------------
+
+---------------28---------------
+
+Image: C:/Users/Felix/viper/testing/images/what_sport.jpg
+Query: What sports are typically played in the arena in the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------28---------------
+
+---------------29---------------
+
+Image: C:/Users/Felix/viper/testing/images/word_text.png
+Query: What is the word in the image?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------29---------------
+
+---------------30---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What company is displayed on the advertisement banner?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------30---------------
+
+---------------31---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What airline company is displayed on the advertisement banner?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------31---------------
+
+---------------32---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What airline company is displayed on the football advertisement banner?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------32---------------
+
+---------------33---------------
+
+Image: C:/Users/Felix/viper/testing/images/ad.jpg
+Query: What global airline company is displayed on the advertisement banner?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------33---------------
+
+---------------34---------------
+
+Image: C:/Users/Felix/viper/testing/images/mistake.jpg
+Query: What is the mistake in the image?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------34---------------
+
+---------------35---------------
+
+Image: C:/Users/Felix/viper/testing/images/mistake.jpg
+Query: What is the spelling mistake in the image?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------35---------------
+
+---------------36---------------
+
+Image: C:/Users/Felix/viper/testing/images/what_book_series.jpg
+Query: What is the name of the longest book series on the shelf?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------36---------------
+
+---------------37---------------
+
+Image: C:/Users/Felix/viper/testing/images/what_book_series.jpg
+Query: What are the names of the books on the shelf, which has the longest series?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------37---------------
+
+---------------38---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class.jpg
+Query: What are the students learning in the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------38---------------
+
+---------------39---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What are the students learning in the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------39---------------
+
+---------------40---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What common school subject is the student learning in the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------40---------------
+
+---------------41---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What subject is the student writing on the board in the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------41---------------
+
+---------------42---------------
+
+Image: C:/Users/Felix/viper/testing/images/math_class2.jpg
+Query: What school subject is the student writing on the board in the picture?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    image_patch = ImagePatch(image)
+    student_patches = image_patch.find("student")
+    for student_patch in student_patches:
+        if student_patch.verify_property("student", "writing"):
+            return student_patch.simple_query("What is the subject?")
+```
+
+### Question 2
+
+Query: What is the name of the object that is closest to the red bar in the picture?  
+
+### Answer
+
+```python
+def 
+
+---------------42---------------
+
+---------------43---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: Decribe what is on the image.
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------43---------------
+
+---------------44---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: How many virtual characters can be seen in the image?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------44---------------
+
+---------------45---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: What is the name of the oldest champion in the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------45---------------
+
+---------------46---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: What is the name of the oldest League of Legends champion in the picture?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------46---------------
+
+---------------47---------------
+
+Image: C:/Users/Felix/viper/testing/images/champion.jpg
+Query: In the picture are the League of Legends champions Lux, Jinx, Yasuo and Blitzcrank. Return the ImagePatch and the name of the oldest of these four champions.
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------47---------------
+
+---------------48---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the holiday depicted in the image?
+
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    """
+    A Python function that takes an image as input and returns a string describing the object in the image.
+    
+    Parameters
+    ----------
+    image : array_like
+        An array-like of the original image.
+        
+    Returns
+    -------
+    str
+        The name of the object in the image.
+    """
+    import math
+    class ImagePatch:
+        """A Python class containing a crop of an image centered around a particular object, as well as relevant information.
+    
+        Attributes
+        ----------
+        cropped_image : array_like
+            An array-like of the cropped image taken from the original image.
+        left, lower, right, upper : int
+            An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.
+        
+        Methods
+        -------
+        find(object_name: str)->List[ImagePatch]
+            Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the
+            image matching the object_name.
+        exists(object_name: str)->bool
+            Returns True if the object specified by object_name is found in the image, and False otherwise.
+        verify_property(property: str)->bool
+            Returns True if the property is met, and False otherwise.
+        best_text_match(option_list: List[str], prefix: str)->str
+            Returns the string that best matches the image.
+        simple_query(question: str=None)->str
+            Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".
+        llm_query(question: str, long_answer: bool)->str
+            References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.
+        compute_depth()->float
+            Returns the median depth of the image crop.
+        crop(left: int, lower: int, right: int, upper: int)->ImagePatch
+
+---------------48---------------
+
+---------------49---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the Christian holiday depicted in the image?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------49---------------
+
+---------------50---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the Christian holiday associated with the image?
+
+
+Code: ### Solution
+
+```python
+import math
+class ImagePatch:     """A Python class containing a crop of an image centered around a particular object, as well as relevant information.     Attributes     ----------     cropped_image : array_like         An array-like of the cropped image taken from the original image.     left, lower, right, upper : int         An int describing the position of the (left/lower/right/upper) border of the crop's bounding box in the original image.      Methods     -------     find(object_name: str)->List[ImagePatch]         Returns a list of new ImagePatch objects containing crops of the image centered around any objects found in the         image matching the object_name.     exists(object_name: str)->bool         Returns True if the object specified by object_name is found in the image, and False otherwise.     verify_property(property: str)->bool         Returns True if the property is met, and False otherwise.     best_text_match(option_list: List[str], prefix: str)->str         Returns the string that best matches the image.     simple_query(question: str=None)->str         Returns the answer to a basic question asked about the image. If no question is provided, returns the answer to "What is this?".     llm_query(question: str, long_answer: bool)->str         References a large language model (e.g., GPT) to produce a response to the given question. Default is short-form answers, can be made long-form responses with the long_answer flag.     compute_depth()->float         Returns the median depth of the image crop.     crop(left: int, lower: int, right: int, upper: int)->ImagePatch         Returns a new ImagePatch object containing a crop of the image at the given coordinates.     """      def __init__(self, image, left: int = None, lower: int = None, right: int = None, upper: int = None):         """Initializes an ImagePatch object by cropping the image at the given coordinates and stores the coordinates as         attributes. If no coordinates are provided, the image is left unmodified, and the coordinates are set to the         dimensions of the image.         Parameters         -------         image : array_
+
+---------------50---------------
+
+---------------51---------------
+
+Image: C:/Users/Felix/viper/testing/images/jesus.jpg
+Query: What is the name of the Christian holiday associated with this image of Jesus?
+
+Code: def execute_command(image, my_fig, time_wait_between_lines, syntax):
+    """
+    Write a function using Python and the ImagePatch class (above) that could be executed to provide an answer to the query.
+    Consider the following guidelines:
+        - Use base Python (comparison, sorting) for basic logical operations, left/right/up/down, math, etc.
+        - Use the llm_query function to access external information and answer informational questions not concerning the image.
+    Query: What is the name of the Christian holiday associated with this image of Jesus?
+    """
+
+
+---------------51---------------
+
