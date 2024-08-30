@@ -1,4 +1,4 @@
-# Dies ist die alte Reade datei des orginalem Viper Projektes
+# Dies ist die alte Readme Datei des orginalem Viper Projektes
 
 
 
